@@ -1,0 +1,358 @@
+\documentclass[compress]{beamer}
+\mode<presentation>
+{
+  \usetheme{Warsaw}
+}
+
+\setbeamertemplate{navigation symbols}{}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{alltt}
+\usepackage{tikz}
+
+
+\usetikzlibrary{shapes.geometric}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Matematikai jelek es roviditesek:
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\u{\hfill\break}
+%\def\unless {\triangleright}
+\def\unless {\rhd}
+\def\ensures {\mapsto}
+%\def\leadsto {\hookrightarrow}
+\def\inev {\hookrightarrow}
+\def\lto{{\hookrightarrow\hspace*{-2 ex}\circ\hspace*{1 ex}}}
+\def\eto{{\mapsto\hspace*{-2 ex}\circ\hspace*{1 ex}}}
+%\def \leadsto van
+\def\initially {{\rm INIT}}
+\def\fixpont {{\rm FP}}
+\def\fps{{fixpont}_S}
+\def\term {{\rm TERM}}
+\def\doboz{{$\sqcap$}\llap{$\sqcup$}}
+\def\inv{{\rm inv}}
+\def\INV{{\rm INV}}
+%\def\kons{{\rm cons}}
+\def\true{\uparrow}
+\def\false{\downarrow}
+\def\init{{\rm INIT}}
+\def\underset#1#2#3{{ {\displaystyle #3}\atop {#1} }}
+\def\Ordo{O} % hz
+\def\ih#1{{\lceil#1\rceil}}
+\def\Di#1{{[#1]}}
+\def\parcfv{\longrightarrow}
+\def\fv{\longmapsto}
+%\def\ha-akkor{\Rightarrow}
+%\def\impl{\rightarrow}
+%\def\acsa{\Longleftrightarrow}
+%\def\akkor-ha{\Longleftarrow}
+\def\eqdef{{::=}}
+\def\legy{{::=}}
+%\def\eqdef{\;\mathrel{\displaystyle{\mathop=^{\rm{\fiverm def}}}}\;}
+\def\underset#1#2#3{{ {\displaystyle #3}\atop {#1} }}
+
+
+\title[Teaching Principles  of Dependable Distributed Software]{Teaching Principles of Dependable Distributed Software}
+
+\author[Zoltán Horváth, \texttt{hz@inf.elte.hu}]{Zoltán Horváth \\ 
+\texttt{hz@inf.elte.hu}}
+\institute{{\small Faculty of Informatics, Eötvös Loránd University, Budapest}}
+\date{14th Workshop on Software Engineering Education and Reverse Engineering \\ Sinaia, Aug 26, 2014}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Dependable Software}
+
+\begin{frame}{Software – what our everyday life is depending on}
+
+\begin{columns}
+\column{7cm}{}
+
+\begin{itemize}
+\item communication: phone, e-mail, social media
+\item navigation
+\item home banking
+\item healthcare administration, medical devices 
+\item car -- in-vechile software: diagnostic, safety, driver assistance
+\item aircraft --  autopilot control system ("Who's really flying the plane?")
+\item nuclear power plant  control system safety software
+\end{itemize}
+
+\column{5cm}{}
+\begin{figure}
+\includegraphics%[width=1.0\textwidth, totalheight=1.0\textheight]
+{atmswitch.jpg}
+\end{figure}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{Infamous software bugs}
+\begin{itemize}
+
+\item The Mars Climate Orbiter doesn't orbit (1998, metric system, \$327.6 million)
+\end{itemize}
+ \begin{figure}
+\includegraphics[width=0.4\textwidth, totalheight=0.4\textheight]
+ {CM-MarsCO-pic-array.jpg}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{itemize}
+
+\item Call waiting ... and waiting ... and waiting (On Jan. 15, 1990, around 60,000 AT\&T custumers, congestion lead to cascade reset of 114 switches)
+
+\item Therac-25 Medical Accelerator disaster (1985, race condition, two modes)
+
+\item Soviet early-warning system (Sep. 23, 1983, Petrov)
+
+\end{itemize}
+\begin{figure}
+\includegraphics[width=0.5\textwidth,totalheight=0.5\textheight]{soviet.jpg}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{itemize}
+
+\item Nuclear Power Plant shutdown (June 5, 2008, USA, software update in a distributed system)
+
+\end{itemize}
+
+\begin{figure}
+\includegraphics[width=0.5\textwidth, totalheight=0.5\textheight]{plant-hatch.jpg}
+\end{figure}
+
+\begin{itemize}
+
+\item Ford in-vechile software failiure - hw. reset at Körösf\H o (2014)
+
+\item Samsung mobile network connection error (2014, flight mode off and on) 
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Correctness of Distributed programs}
+
+%\centerline{}
+\includegraphics[scale=0.7]{fa.pdf}
+
+\begin{itemize}
+
+\item interleaving, branching time semantics of distributed and parallel programs
+
+\item testing of properties, reachable states
+
+\item specification of the problem to solve
+
+\item static verification, analysis, calculation of reachable states
+
+\end{itemize}
+
+\end{frame}
+
+
+
+
+\begin{frame}{Always true is not always invariant}
+
+\begin{itemize}
+
+\item  P  invariant -- P holds initialy and P is preserved (also in unreachable states)
+
+\item  P2  always true  -- P2 holds in all reachable states 
+
+\end{itemize}
+
+\includegraphics[scale=0.7]{inv.pdf}
+
+Only invariants do compose!
+
+\end{frame}       
+
+\begin{frame}{}
+
+Motivation for using formal methods: 
+
+- safety critical applications
+
+- safe application of software components
+
+- {\bf primary goal}: sound concepts about distributed and parallel 
+programs
+
+\end{frame}
+
+
+
+
+\begin{frame}{Properties of the formal model}
+
+
+ We need  a  formal model, which is appropriate for 
+specification of {\em problems\/} and developing the {\em  solutions}
+of problems in case of  
+{\em parallel and distributed systems}. 
+
+
+The introduced model
+
+\begin{itemize}
+
+
+\item  is an extension of a relational model of nondeterministic 
+sequential programs,
+
+ 
+\item provides tools for stepwise refinement of
+problems, in a functional approach,
+
+ 
+ 
+\item uses the concept of iterative abstract program
+of UNITY,
+
+
+
+\item the concept of solution is based on the comparison 
+of the  problem as a relation and the behaviour relation of the
+program.
+
+
+\end{itemize}  
+
+\end{frame}
+
+\begin{frame}{Example problem: the dining philosophers}
+
+
+\centerline{\includegraphics[scale=0.5]{filo.pdf}}
+
+States: thinking:t, forks in hands:f, eating:e, at home:h,  
+
+\end{frame}
+
+\begin{frame}{}
+
+
+Some requirements (problem specification):  $\forall  i : $
+
+unless: $ f(i).t \unless f(i).f \lor f(i).h$
+
+unless: $ f(i).f \unless f(i).e$
+ 
+ensures: $f(i).e \ensures f(i).t$
+
+inevitable leads-to: $f(i).t \inev f(i).h$
+
+invariant: $ (f(i).e \rightarrow (\lnot f(i+1).e \land f(i-1).e))  \in 
+\inv$
+
+fixed point: $ \fixpont \Rightarrow f(i).h$
+
+termination: $ \forall i: f(i).t \in \term $
+
+\end{frame}
+
+\begin{frame}{}
+
+\centerline{\bf Program, solution}
+
+$S = (SKIP, \u
+\{
+\underset{i \in [1..n-1]}\to{\Box}  a(i),a(i+1) := a(i+1),a(i), \  \mbox{if} \ 
+a(i) > a(i+1) \})$
+
+\bigskip
+
+Abstract execution model: No control flow, free processors select 
+assignments asynchronously
+
+Program: scheduling, processes, location, communication 
+infrastructure, language 
+
+Example: C++/PVM PC-cluster  (Parallel Virtual Machine) / Erlang
+
+Solution: Specification requirements are satisfied by
+program properties
+
+\end{frame}
+
+
+
+\begin{frame}{}
+
+\begin{itemize}
+
+
+\item The notion of the state space makes
+it possible to define the semantical meaning of a
+problem independently of any program.\
+
+\item The generalized
+concept of a problem is applicable for cases in which termination is
+not required but the behaviour of the specified system is
+restricted by safety and progress properties.\
+
+\item The solution of a
+problem may be a sequential program, a parallel one, or even {\em a
+program built up from both sequential and parallel components}.\
+
+\end{itemize}
+
+
+\end{frame}
+
+
+
+
+ 
+ 
+\begin{frame}{Parallelism and Functional Programming}
+
+\begin{itemize}
+ 
+\item DClean - a coordination language for type safe distributed cooperation of Clean programs - with Viktória Zsók, Zoltán Hernyák
+
+\item Sparkle-T - proof tool for temporal properties (e.g. invariants) of Clean programs - with Máté Tejfel and Tamás Kozsik
+
+\item Static analysis - to support code comprehension at industrial level in Erlang - with Melinda Tóth, István Bozó and others
+
+\item Paraphrase  - property preserving transformations of Erlang programs to enable parallel multicore execution - with Tamás Kozsik, Melinda Tóth, István Bozó, Judit Kőszegi, Dániel Horpácsi, Viktória Fördős and others
+  
+\end{itemize}
+\end{frame} 
+
+
+\begin{frame}{Literature}
+
+
+- Chandy, K.M., Misra, J.: {\em Parallel Program Design - A Foundation}.
+Addison-Wesley, 1989.
+
+- Misra, J.: {\em A Discipline of Multiprogramming - Programming Theory 
+for Distributed Applications}. Springer, 2001.
+
+- Horv\'ath Z.:  Parallel asynchronous computation 
+of the values of
+ an associative function.\ {\em Acta Cybernetica}, Vol.\ 12, No. 1,
+ Szeged (1995) 83-94.
+
+- Horv\'ath Z.: The Formal Specification of a 
+Problem Solved by a Parallel Program -- a Relational Model.\
+
+\end{frame}
+
+
+\end{document}

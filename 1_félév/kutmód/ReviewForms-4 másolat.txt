@@ -1,0 +1,241 @@
+========================================================================
+Plaintext Review Forms - Instructions
+========================================================================
+
+Please complete your review using the following guidelines for the 
+scored categories.
+
+Technical Content and Accuracy (1-7)
+------------------------------------
+(1: Strong Reject, 2: Reject, 3:Weak Reject, 4: Neutral, 5: Weak Accept, 6: Accept, 7: Strong Accept)
+
+Significance of the Work (1-7)
+------------------------------
+(1: Strong Reject, 2: Reject, 3:Weak Reject, 4: Neutral, 5: Weak Accept, 6: Accept, 7: Strong Accept)
+
+Appropriate Title, Introduction, and Conclusion (1-7)
+-----------------------------------------------------
+(1: Strong Reject, 2: Reject, 3:Weak Reject, 4: Neutral, 5: Weak Accept, 6: Accept, 7: Strong Accept)
+
+Overall Organization (1-7)
+--------------------------
+(1: Strong Reject, 2: Reject, 3:Weak Reject, 4: Neutral, 5: Weak Accept, 6: Accept, 7: Strong Accept)
+
+Appropriateness for SAC (1-7)
+-----------------------------
+(1: Strong Reject, 2: Reject, 3:Weak Reject, 4: Neutral, 5: Weak Accept, 6: Accept, 7: Strong Accept)
+
+Style and Clarity of the Paper (1-7)
+------------------------------------
+(1: Strong Reject, 2: Reject, 3:Weak Reject, 4: Neutral, 5: Weak Accept, 6: Accept, 7: Strong Accept)
+
+Originality of Content (1-7)
+----------------------------
+(1: Strong Reject, 2: Reject, 3:Weak Reject, 4: Neutral, 5: Weak Accept, 6: Accept, 7: Strong Accept)
+
+OVERALL RECOMMENDATION (1-7)
+----------------------------
+(1: Strong Reject, 2: Reject, 3:Weak Reject, 4: Neutral, 5: Weak Accept, 6: Accept, 7: Strong Accept)
+
+
+FORMATTING GUIDELINES
+---------------------
+
+Enter only plain text on these forms.  Your text should be formatted
+in UFT-8 only.  
+
+Paragraphs should be separated by two linefeeds (like the text in 
+these instructions).
+
+Remember that your textual comments will also be presented in HTML
+form.  START will attempt to preserve the "flow" of your original
+ASCII content in HTML (e.g., to preserve itemized lists, enumeration,
+etc.).  But the narrative sections will be filled, i.e., the content
+will be resized to fit the browser window.
+
+That said, you may want to include multi-line formulas, tables, or
+matrices in your review - where the alignment and spacing of the data
+needs to be preserved as entered, even when rendered in HTML.  To
+accomplish this, you can include "<pre>" contexts in your textual
+comments, in which case the enclosed data will be displayed as it was
+entered.  For example:
+
+   <pre>
+   7   5  11
+   0   0   1
+   1   0   1                   
+   </pre>
+
+If you do use this feature, do not forget the closing "</pre>" tag, 
+at the end of the pre-formatted text. And in general, only use 
+<pre>-style formatting when it's absolutely necessary to do so.
+
+[This line is to force your editor to use UTF-8 encodings:öäşεργασίαбоá]
+
+
+
+
+========================================================================
+Review Form - Submission #xxx
+=======================================DZE3CTX9=xxxx====================
+
+
+
+Review Form
+
+-------------------------------------------------------------------
+
+Title: Cím 
+
+Track: PL - Programming Languages  
+
+PaperName: PL-azonosítószám
+
+-------------------------------------------------------------------------
+SECONDARY REVIEWER
+-------------------------------------------------------------------------
+
+If you used a secondary reviewer to help with this review, and you wish 
+to give credit to this person, enter his/her name after the colon (:) sign 
+below.  If no secondary reviewer was used, leave the field blank.  
+
+  Secondary Reviewer: 
+
+                                         =7XD3914=SecondaryRev===========
+
+-------------------------------------------------------------------
+
+Summary Ranking
+
+Please evaluate the submission according to the criteria below.
+
+     ====================================================================
+     Technical Content and Accuracy
+     =============================9YEDC25=S=Technical_Content_and_Accuracy
+
+     Insert your evaluation directly following the colon (:) sign. 
+     Please select an INTEGER (whole-number) score from within the 
+     range specified. 
+
+     The form has been initialized with the minimum score as a default.
+     Replace this default with your own evaluation.
+
+     Technical Content and Accuracy (1 - 7): 1
+
+     =7XD3914=S=Technical_Content_and_Accuracy
+
+     ====================================================================
+     Significance of the Work
+     =============================9YEDC25=S=Significance_of_the_Work=====
+
+     Significance of the Work (1 - 7): 1
+
+     =7XD3914=S=Significance_of_the_Work
+
+     ====================================================================
+     Appropriate Title, Introduction, and Conclusion
+     =============================9YEDC25=S=Appropriate_Title__Introduction__and_Conclusion
+
+     Appropriate Title, Introduction, and Conclusion (1 - 7): 1
+
+     =7XD3914=S=Appropriate_Title__Introduction__and_Conclusion
+
+     ====================================================================
+     Overall Organization
+     =============================9YEDC25=S=Overall_Organization=========
+
+     Overall Organization (1 - 7): 1
+
+     =7XD3914=S=Overall_Organization
+
+     ====================================================================
+     Appropriateness for SAC
+     =============================9YEDC25=S=Appropriateness_for_SAC======
+
+     Appropriateness for SAC (1 - 7): 1
+
+     =7XD3914=S=Appropriateness_for_SAC
+
+     ====================================================================
+     Style and Clarity of the Paper
+     =============================9YEDC25=S=Style_and_Clarity_of_the_Paper
+
+     Style and Clarity of the Paper (1 - 7): 1
+
+     =7XD3914=S=Style_and_Clarity_of_the_Paper
+
+     ====================================================================
+     Originality of Content
+     =============================9YEDC25=S=Originality_of_Content=======
+
+     Originality of Content (1 - 7): 1
+
+     =7XD3914=S=Originality_of_Content
+
+     ====================================================================
+     Referee's Confidence in the Paperâs Subject
+     =============================9YEDC25=S=Referee_s_Confidence_in_the_Paper___s_Subject
+
+     Place an 'x' mark in the box next to your selection for this category.  
+
+     =X=0   [x]: High
+     =X=1   [ ]: Medium
+     =X=2   [ ]: Low
+
+
+     =7XD3914=S=Referee_s_Confidence_in_the_Paper___s_Subject
+
+     ====================================================================
+     OVERALL RECOMMENDATION
+     =============================9YEDC25=S=OVERALL_RECOMMENDATION=======
+
+     OVERALL RECOMMENDATION (1 - 7): 1
+
+     =7XD3914=S=OVERALL_RECOMMENDATION
+
+-------------------------------------------------------------------
+
+Detailed Comments
+
+Please supply detailed comments to back up your rankings. These comments will be forwarded to the authors of the paper. The comments will help the committee decide the outcome of the paper, and will help justify this decision for the authors. Moreover, if the paper is accepted, the comments should guide the authors in making revisions for a final manuscript. Hence, the more detailed you make your comments, the more useful your review will be - both for the committee and for the authors.
+
+
+=Start==============================================9YEDC25=field_Comments=====
+
+
+
+=End================================================7XD3914=field_Comments=====
+
+
+-------------------------------------------------------------------
+
+Confidential Comments for Committee
+
+You may wish to withhold some comments from the authors, and include them solely for the committee's internal use. For example, you may want to express a very strong (negative) opinion on the paper, which might offend the authors in some way. Or, perhaps you wish to write something which would expose your identity to the authors.  If you wish to share comments of this nature with the committee, this is the place to put them.
+
+
+=Start==============================================9YEDC25=field_Confidential_Comments=====
+
+
+
+=End================================================7XD3914=field_Confidential_Comments=====
+
+
+========================================================================
+End Review Form - Submission #xxxx
+=======================================CX39VB8D=xxxx====================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
